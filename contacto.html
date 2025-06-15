@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - ISC</title>
+    <link rel="icon" type="image/png" href="cosas/imagenes/logo.png" />
+    <link rel="stylesheet" href="estilos/inicio.css">
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/contacto.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="cosas/imagenes/logo.png" alt="Logo de la marca">
+        </div>
+        <nav>
+           <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carreras.html">Carreras</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="becas.html">Becas</a></li>
+                <li><a href="admision.html">Admisión</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+           </ul>            
+        </nav>
+        <a class="btn" href="#"><button>Ingresar</button></a>
+
+        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+        <div class="overlay" id="mobile-menu">
+            <a onclick="closeNav()" href="#" class="close">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html">Inicio</a>
+                <a href="carreras.html">Carreras</a>
+                <a href="profesores.html">Profesores</a>
+                <a href="becas.html">Becas</a>
+                <a href="admision.html">Admisión</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contacto Section -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section__title">Contacto</h2>
+            <p class="section__subtitle">Estamos aquí para ayudarte. Contáctanos para más información.</p>
+            <div class="contacto__grid">
+                <div class="contacto__info">
+                    <div class="info__card">
+                        <h3 class="info__title">Dirección</h3>
+                        <p class="info__text">Av. Principal 123, Ciudad, País</p>
+                    </div>
+                    <div class="info__card">
+                        <h3 class="info__title">Horario de atención</h3>
+                        <p class="info__text">Lunes a Viernes: 8:00 am - 6:00 pm</p>
+                    </div>
+                    <div class="info__card">
+                        <h3 class="info__title">Teléfono</h3>
+                        <p class="info__text">+51 987 654 321</p>
+                    </div>
+                    <div class="info__card">
+                        <h3 class="info__title">Correo electrónico</h3>
+                        <p class="info__text">instituto@sideralcarrion.edu.pe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="/js/nav.js"></script>
+</body>
+</html> 

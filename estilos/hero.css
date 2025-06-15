@@ -1,0 +1,430 @@
+/* =====================================================
+   Hero Section
+===================================================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--color-primary);
+}
+
+.hero__carousel {
+    position: relative;
+    height: 100%;
+}
+
+.hero__track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__slide {
+    flex: 0 0 100%;
+    position: relative;
+}
+
+/*.hero__slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 47, 0.7),
+        rgba(10, 25, 47, 0.9)
+    );
+}*/
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.hero__contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-text-light);
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 var(--spacing-sm);
+}
+
+.hero__titulo {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    animation: fadeInUp 1.2s ease-out;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+}
+
+.hero__descripcion {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.6;
+    animation: fadeInUp 1.2s ease-out 0.3s backwards;
+    color: var(--color-text-light);
+}
+
+
+/* =====================================================
+   Director Section
+===================================================== */
+.director {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+}
+
+.director__contenido {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    background-color: rgba(17, 34, 64, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-accent);
+}
+
+.director__img-container {
+    width: clamp(120px, 25vw, 200px);
+    height: clamp(120px, 25vw, 200px);
+    margin: 0 auto clamp(1.5rem, 4vw, 2rem);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(100, 255, 218, 0.2);
+    animation: fadeIn 1s ease-out;
+    border: 4px solid var(--color-accent);
+}
+
+.director__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.director__img-container:hover .director__img {
+    transform: scale(1.1);
+}
+
+.director__nombre {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.director__titulo {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--color-accent);
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   Campus Video Section
+===================================================== */
+.campus-video-seccion {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.campus-video__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--spacing-md);
+}
+
+.campus-video {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 70px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    background: var(--color-primary-dark, #0a1931);
+    margin: 0 auto;
+    display: block;
+}
+
+.campus-video:focus,
+.campus-video:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+.campus-video-section .section__titulo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-light);
+    margin-bottom: 2.5rem;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    text-transform: uppercase;
+}
+
+.campus-video__container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.campus-video__embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+/* =====================================================
+   Footer Section
+===================================================== */
+.footer {
+    background: linear-gradient(90deg, var(--color-primary-dark, #0a1931) 0%, var(--color-secondary, #185adb) 100%);
+    color: var(--color-white);
+    padding: 2.5rem 0 1.2rem 0;
+    margin-top: 0;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer__info {
+    text-align: center;
+}
+
+.footer__text {
+    font-size: 1rem;
+    color: var(--color-white);
+    opacity: 0.85;
+    margin: 0;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__icon {
+    color: var(--color-accent, #64ffda);
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__icon:hover {
+    color: var(--color-white);
+    transform: scale(1.15) translateY(-3px);
+}
+
+.footer-separator {
+    width: 100%;
+    height: 32px;
+    background: var(--color-primary-dark, #0a1931);
+    display: block;
+}
+
+
+/* =====================================================
+   Section Titles
+===================================================== */
+.section__titulo {
+    text-decoration: underline;
+    font-size: 52px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+
+/* =====================================================
+   Alumnos Section
+===================================================== */
+.alumnoss {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+    font-family: var(--font-primary), sans-serif;
+}
+
+.container__alumnos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    box-sizing: border-box;
+}
+
+.alumnos-descatados {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.alumnos {
+    padding: clamp(6rem, 5vw, var(--spacing-lg)) 0;
+}
+
+.alumnos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    justify-items: center;
+    align-items: stretch;
+    margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Tarjeta alumno */
+.alumno__card {
+    width: 100%;
+    max-width: 320px;
+    background: var(--color-primary-dark);
+    border-radius: 24px;
+    box-shadow: 0 0 24px 0 var(--color-accent, #64ffda), 0 4px 24px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: box-shadow 0.3s;
+    padding: clamp(1rem, 2vw, 1.2rem);
+    height: auto;
+}
+
+.alumno__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen alumno */
+.alumno__img {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.8rem);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--color-primary-dark, #0a1931);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+}
+
+.alumno__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+.alumno__img,
+.alumno__img img {
+    display: block !important;
+}
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+@media screen and (max-width: 1200px) {
+    .alumnos__grid {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .alumnos__grid {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .alumnos__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .alumno__card {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .alumnos__grid {
+        padding: 0 var(--spacing-xs);
+        gap: var(--spacing-sm);
+    }
+
+    .alumno__card {
+        padding: 1rem;
+    }
+}
+
+
+/* =====================================================
+   Animaciones
+===================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

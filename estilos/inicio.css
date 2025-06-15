@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+    /* Colores */
+    --color-primary: #0A192F; /* Azul oscuro principal */
+    --color-secondary: #112240; /* Azul oscuro secundario */
+    --color-accent: #64FFDA; /* Turquesa para acentos */
+    --color-text: #8892B0; /* Gris azulado para texto */
+    --color-text-light: #CCD6F6; /* Gris claro para texto */
+    --color-white: #FFFFFF;
+    --color-gray-light: #F3F4F6;
+    --color-accent-blue: #4A90E2; /* Azul medio para hover */
+    --color-accent-yellow: #FFD700; /* Amarillo dorado para destacados */
+    
+    /* Tipografía */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    /* Bordes */
+    --border-radius: 0.5rem;
+    
+    /* Transiciones */
+    --transition: all 0.3s ease;
+
+    /* Breakpoints */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-primary);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #0A192F;
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    height: 85px;
+    z-index: 100;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent,rgba(255, 255, 255, 0.4),transparent);
+    transition: 0.5s;
+}
+.header:hover::before {
+  left: 100%;
+}
+
+.logo {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+}
+
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.5);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 15px;    
+}
+
+.header .nav-links li:hover,
+    .overlay a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1; 
+}
+
+.header .nav-links li a:hover{
+    color: #ffbc0e;
+}
+
+.menu{
+  display: none;
+}
+
+.header .btn button,
+.header .menu button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover,
+.header .menu button:hover{
+    background-color: #e2f1f8;
+    color: #ffbc0e;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px){
+    .nav-links, .btn {
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+
+/* NAV DESPLEGABLE MENU */
+
+.header a{
+  text-decoration: none;
+}
+
+.header .overlay {
+    height: 400%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #1b3039;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .overlay a{
+    padding: 9px;
+    font-size: 16px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 400;
+    color: #eceff1;
+}
+
+.header .overlay a:hover, 
+.overlay a:focus{
+    color: #ffbc0e;
+}
+
+.header .overlay .close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 55px;
+}
+
+@media screen and (max-height:450px) {
+    .overlay a{
+        font-size: 20px;
+    }
+    .overlay .close{
+        font-size: 30px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.25rem 4%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 4%;
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    margin: 1.5rem 0;
+  }
+  .nav-bg {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    height: 295px;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+    display: none;
+  }
+  .nav-bg.active {
+    display: block;
+  }
+
+
+@media (max-width:600px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #0A192F;
+        gap: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    nav ul li {
+        padding: 20px;
+        padding-top: 0;
+    }
+    .menu-icon {
+        display: block;
+    }
+    #menuList {
+        transition: all 0.5s;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 8rem;
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+}
+
+.hero__content {
+    max-width: 600px;
+}
+
+.hero__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+}
+
+.hero__description {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior Sideral Carrión</title>
+    <link rel="icon" type="image/png" href="cosas/imagenes/logo.png" />
+    <link rel="stylesheet" href="estilos/inicio.css">
+    <link rel="stylesheet" href="estilos/hero.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="cosas/imagenes/logo.png" alt="Logo de la marca">
+        </div>
+        <nav>
+           <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carreras.html">Carreras</a></li>
+                <li><a href="profesores.html">Profesores</a></li>
+                <li><a href="becas.html">Becas</a></li>
+                <li><a href="admision.html">Admisión</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+           </ul>            
+        </nav>
+        <a class="btn" href="#"><button>Ingresar</button></a>
+
+        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+        <div class="overlay" id="mobile-menu">
+            <a onclick="closeNav()" href="#" class="close">&times;</a>
+            <div class="overlay-content">
+                <a href="index.html">Inicio</a>
+                <a href="carreras.html">Carreras</a>
+                <a href="profesores.html">Profesores</a>
+                <a href="becas.html">Becas</a>
+                <a href="admision.html">Admisión</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </header>
+    <div class="main-contenido">
+
+            <!-- imagenes -->
+
+            <section class="hero" id="inicio">
+                <div class="hero__carousel"> <!-- corregido aquí -->
+                    <div class="hero__track">
+                        <div class="hero__slide">
+                            <img src="cosas/imagenes/ins1.png" alt="Instituto 1" class="hero__img">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="cosas/imagenes/ins2.png" alt="Instituto 2" class="hero__img">
+                        </div>
+                        <div class="hero__slide">
+                            <img src="cosas/imagenes/ins3.png" alt="Instituto 3" class="hero__img">
+                        </div>
+                    </div>
+                    <div class="hero__contenido">
+                        <h1 class="hero__titulo"> Formando el futuro </h1>
+                        <p class="hero__descripcion">Descubre tu potencial en nuestro Instituto</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- directorxd -->
+
+            <section class="director">
+                <div class="container">
+                    <div class="director__contenido">
+                        <div class="director__img-container">
+                            <img src="cosas/imagenes/sideral.png" alt="Director" class="director__img">
+                        </div>
+                        <h2 class="director__nombre">Jesus Andres Lujan Carrión</h2>
+                        <p class="director__titulo">Director General</p>
+                    </div>
+                <br>
+                </div>
+                <div class="container">
+                    <div class="director__contenido">
+                        <div class="director__img-container">
+                            <img src="cosas/imagenes/tayronerichetti.png" alt="Director" class="director__img">
+                        </div>
+                        <h2 class="director__nombre">Tayrone Lujan Richetti</h2>
+                        <p class="director__titulo">Sub-Director General</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Video Campus -->
+
+            <section class="campus-video-seccion">
+                <div class="container">
+                    <br>
+                    <br>
+                    <h2 class="section__titulo">Conoce nuestro campus</h2>
+                    <br>
+                    <div class="campus-video__container">
+                        <div class="campus-video__embed">
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/x4jk-FKVNCY" 
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- ALUMNOS DESTACADOSS XD-->
+
+            <section class="alumnoss">
+                <div class="container__alumnos">
+                    <h2 class="section__titulo">ALUMNOS DESTACADOS</h2>
+                    <br>
+                    <div class="alumnos__grid">
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/grupoalumnos.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/logogatitodc.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/sidenegro.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/grupo.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/grupo.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+
+                        <div class="alumno__card">
+                            <div class="alumno__img">
+                                <img src="cosas/imagenes/alumnos/grupo.png" alt="La Pantera" loading="lazy">
+                            </div>
+                            <h3 class="alumno__name"></h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+
+            <footer class="footer">
+                <div class="footer__container container">
+                    <div class="footer__info">
+                        <p class="footer__text">Instituto Superior Sideral Carrión</p>
+                        <p class="footer__text">&copy; 2025 Todos los derechos reservados.</p>
+                    </div>
+                    <div class="footer__social">
+                        <a href="https://www.tiktok.com/@tayronedibujito" class="footer__icon" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562V12h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@tayronedibujito" class="footer__icon" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@tayronedibujito" class="footer__icon" target="_blank" rel="noopener" aria-label="TikTok">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 8.306c-.638 0-1.262-.062-1.87-.183v6.13c0 3.18-2.582 5.767-5.76 5.767a5.77 5.77 0 0 1-2.98-10.74v2.13a3.64 3.64 0 1 0 3.64 3.64V2.5h2.13c.11 1.13.62 2.17 1.44 2.99A5.77 5.77 0 0 0 21 8.306z" fill="currentColor"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+    </div>
+    <script type="text/javascript" src="/js/nav.js"></script>
+    <script type="text/javascript" src="/js/herso.js"></script>
+</body>
+</html>
+
+<!---
+    <header class="header">
+        <img src="cosas/imagenes/logo.png" alt="Logo" class="logo" />
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#">Inicio</a>
+            <a href="#">Carreras</a>
+            <a href="#">Profesores</a>
+            <a href="#">Admisión</a>
+            <a href="#">Becas</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+-->
+
+<!---
+    <header class="header">
+        <div class="logo">
+            <img src="/cosas/imagenes/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Carreras</a></li>
+                <li><a href="#">Profesores</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+-->
