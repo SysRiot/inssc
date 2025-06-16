@@ -18,24 +18,28 @@ function generarCertificado() {
     return;
   }
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(plantilla, 0, 0);
+  // Esperar a que la fuente Alex Brush esté lista
+  document.fonts.load('10pt "Alex Brush"').then(() => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(plantilla, 0, 0);
 
-  const xTexto1 = (1667 + 336) / 2;
-  const yTexto1 = (660 + 700) / 2;
-  const anchoMaxTexto1 = 1667 - 336;
+    const xTexto1 = (1667 + 336) / 2;
+    const yTexto1 = (660 + 700) / 2;
+    const anchoMaxTexto1 = 1667 - 336;
 
-  const xTexto2 = (228 + 1819) / 2;
-  const yTexto2 = (935 + 975) / 2;
-  const anchoMaxTexto2 = 1819 - 228;
+    const xTexto2 = (228 + 1819) / 2;
+    const yTexto2 = (935 + 975) / 2;
+    const anchoMaxTexto2 = 1819 - 228;
 
-  ajustarYMostrarTexto(nombre, "Alex Brush", 95, 20, anchoMaxTexto1, xTexto1, yTexto1);
-  ajustarYMostrarTexto(actividad, "Alex Brush", 150, 20, anchoMaxTexto2, xTexto2, yTexto2);
+    ajustarYMostrarTexto(nombre, "Alex Brush", 95, 20, anchoMaxTexto1, xTexto1, yTexto1);
+    ajustarYMostrarTexto(actividad, "Alex Brush", 150, 20, anchoMaxTexto2, xTexto2, yTexto2);
 
-  const enlace = document.getElementById('descargar');
-  enlace.href = canvas.toDataURL('image/png');
-  enlace.style.display = 'inline-block';
+    const enlace = document.getElementById('descargar');
+    enlace.href = canvas.toDataURL('image/png');
+    enlace.style.display = 'inline-block';
+  });
 }
+
 
 function ajustarYMostrarTexto(texto, fuente, tamañoInicial, tamañoMinimo, anchoMaximo, x, y) {
   let fontSize = tamañoInicial;
