@@ -18,7 +18,7 @@ function generarCertificado() {
     return;
   }
 
-  // Esperar a que la fuente Alex Brush esté lista
+  // Cargar la fuente antes de dibujar
   document.fonts.load('10pt "Alex Brush"').then(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(plantilla, 0, 0);
@@ -34,12 +34,13 @@ function generarCertificado() {
     ajustarYMostrarTexto(nombre, "Alex Brush", 95, 20, anchoMaxTexto1, xTexto1, yTexto1);
     ajustarYMostrarTexto(actividad, "Alex Brush", 150, 20, anchoMaxTexto2, xTexto2, yTexto2);
 
-    const enlace = document.getElementById('descargar');
+    // Descargar automáticamente el certificado
+    const enlace = document.createElement('a');
     enlace.href = canvas.toDataURL('image/png');
-    enlace.style.display = 'inline-block';
+    enlace.download = `Certificado_${nombre.replace(/\s+/g, '_')}.png`;
+    enlace.click();
   });
 }
-
 
 function ajustarYMostrarTexto(texto, fuente, tamañoInicial, tamañoMinimo, anchoMaximo, x, y) {
   let fontSize = tamañoInicial;
