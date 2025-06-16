@@ -18,7 +18,6 @@ function generarCertificado() {
     return;
   }
 
-  // Cargar la fuente antes de dibujar
   document.fonts.load('10pt "Alex Brush"').then(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(plantilla, 0, 0);
@@ -34,7 +33,6 @@ function generarCertificado() {
     ajustarYMostrarTexto(nombre, "Alex Brush", 95, 20, anchoMaxTexto1, xTexto1, yTexto1);
     ajustarYMostrarTexto(actividad, "Alex Brush", 150, 20, anchoMaxTexto2, xTexto2, yTexto2);
 
-    // Descargar automáticamente el certificado
     const enlace = document.createElement('a');
     enlace.href = canvas.toDataURL('image/png');
     enlace.download = `Certificado_${nombre.replace(/\s+/g, '_')}.png`;
